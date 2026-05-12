@@ -1,0 +1,498 @@
+import '/components/button_widget.dart';
+import '/components/social_login_pill_widget.dart';
+import '/components/switch_component_widget.dart';
+import '/components/text_field_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'logowanie_model.dart';
+export 'logowanie_model.dart';
+
+class LogowanieWidget extends StatefulWidget {
+  const LogowanieWidget({super.key});
+
+  static String routeName = 'Logowanie';
+  static String routePath = '/logowanie';
+
+  @override
+  State<LogowanieWidget> createState() => _LogowanieWidgetState();
+}
+
+class _LogowanieWidgetState extends State<LogowanieWidget> {
+  late LogowanieModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => LogowanieModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: SingleChildScrollView(
+          primary: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: 300,
+                child: Stack(
+                  alignment: AlignmentDirectional(-1, -1),
+                  children: [
+                    ClipRRect(
+                      child: Container(
+                        height: 300,
+                        child: CachedNetworkImage(
+                          fadeInDuration: Duration(milliseconds: 0),
+                          fadeOutDuration: Duration(milliseconds: 0),
+                          imageUrl:
+                              'https://dimg.dreamflow.cloud/v1/image/stylized%20gaming%20world%20landscape%20fortnite%20style%20colorful',
+                          fit: BoxFit.cover,
+                          alignment: Alignment(0, 0),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            FlutterFlowTheme.of(context).primaryBackground,
+                            FlutterFlowTheme.of(context).background40,
+                            Colors.transparent
+                          ],
+                          stops: [0, 0.5, 1],
+                          begin: AlignmentDirectional(0, 1),
+                          end: AlignmentDirectional(0, -1),
+                        ),
+                        shape: BoxShape.rectangle,
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0, 1),
+                      child: Padding(
+                        padding: EdgeInsets.all(24),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primary,
+                                borderRadius: BorderRadius.circular(24),
+                                shape: BoxShape.rectangle,
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  width: 4,
+                                ),
+                              ),
+                              alignment: AlignmentDirectional(0, 0),
+                              child: Icon(
+                                Icons.sports_esports_rounded,
+                                color: FlutterFlowTheme.of(context).onPrimary,
+                                size: 42,
+                              ),
+                            ),
+                            Text(
+                              'Game Plan Family',
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineMedium
+                                  .override(
+                                    font: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FontWeight.w900,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w900,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .fontStyle,
+                                    lineHeight: 1.2,
+                                  ),
+                            ),
+                            Text(
+                              'Witaj w swojej bazie dowodzenia',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                    lineHeight: 1.4,
+                                  ),
+                            ),
+                          ].divide(SizedBox(height: 8)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'E-mail lub Nick',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    font: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                    lineHeight: 1.2,
+                                  ),
+                            ),
+                            wrapWithModel(
+                              model: _model.textFieldModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: TextFieldWidget(
+                                label: false,
+                                helper: false,
+                                hint: 'Twój adres e-mail',
+                                value: '',
+                                leading_icon: Icon(
+                                  Icons.person_outline_rounded,
+                                ),
+                                leading_icon_present: true,
+                                trailing_icon_present: false,
+                                variant: 'outlined',
+                                error: false,
+                              ),
+                            ),
+                          ].divide(SizedBox(height: 8)),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Hasło',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    font: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                    lineHeight: 1.2,
+                                  ),
+                            ),
+                            wrapWithModel(
+                              model: _model.textFieldModel2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: TextFieldWidget(
+                                label: false,
+                                helper: false,
+                                hint: 'Wprowadź hasło',
+                                value: '',
+                                leading_icon: Icon(
+                                  Icons.lock_open_rounded,
+                                ),
+                                leading_icon_present: true,
+                                trailing_icon: Icon(
+                                  Icons.visibility_off_rounded,
+                                ),
+                                trailing_icon_present: true,
+                                variant: 'outlined',
+                                error: false,
+                              ),
+                            ),
+                          ].divide(SizedBox(height: 8)),
+                        ),
+                      ].divide(SizedBox(height: 16)),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        wrapWithModel(
+                          model: _model.switchComponentModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: SwitchComponentWidget(
+                            label: false,
+                            variant: 'Android',
+                            active: true,
+                          ),
+                        ),
+                        Text(
+                          'Zapomniałeś hasła?',
+                          style:
+                              FlutterFlowTheme.of(context).labelLarge.override(
+                                    font: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                    lineHeight: 1.2,
+                                  ),
+                        ),
+                      ],
+                    ),
+                    wrapWithModel(
+                      model: _model.buttonModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: ButtonWidget(
+                        content: 'Zaloguj się',
+                        icon: Icon(
+                          Icons.login_rounded,
+                          color: FlutterFlowTheme.of(context).onPrimary,
+                          size: 16,
+                        ),
+                        icon_present: true,
+                        icon_end_present: false,
+                        color: FlutterFlowTheme.of(context).error,
+                        variant: 'primary',
+                        size: 'large',
+                        full_width: true,
+                        loading: false,
+                        disabled: false,
+                      ),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Divider(
+                            height: 16,
+                            thickness: 1,
+                            indent: 0,
+                            endIndent: 0,
+                            color: FlutterFlowTheme.of(context).alternate,
+                          ),
+                        ),
+                        Text(
+                          'LUB',
+                          style: FlutterFlowTheme.of(context)
+                              .labelSmall
+                              .override(
+                                font: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelSmall
+                                      .fontStyle,
+                                ),
+                                color: FlutterFlowTheme.of(context).onSecondary,
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .labelSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelSmall
+                                    .fontStyle,
+                                lineHeight: 1.1,
+                              ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Divider(
+                            height: 16,
+                            thickness: 1,
+                            indent: 0,
+                            endIndent: 0,
+                            color: FlutterFlowTheme.of(context).alternate,
+                          ),
+                        ),
+                      ].divide(SizedBox(width: 16)),
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        wrapWithModel(
+                          model: _model.socialLoginPillModel1,
+                          updateCallback: () => safeSetState(() {}),
+                          child: SocialLoginPillWidget(
+                            name: 'Google',
+                            provider:
+                                'https://cdn.simpleicons.org/google/1a1d23.svg',
+                          ),
+                        ),
+                        wrapWithModel(
+                          model: _model.socialLoginPillModel2,
+                          updateCallback: () => safeSetState(() {}),
+                          child: SocialLoginPillWidget(
+                            name: 'Apple',
+                            provider:
+                                'https://cdn.simpleicons.org/apple/1a1d23.svg',
+                          ),
+                        ),
+                        wrapWithModel(
+                          model: _model.socialLoginPillModel3,
+                          updateCallback: () => safeSetState(() {}),
+                          child: SocialLoginPillWidget(
+                            name: 'Xbox Live',
+                            provider:
+                                'https://cdn.simpleicons.org/xbox/1a1d23.svg',
+                          ),
+                        ),
+                      ].divide(SizedBox(height: 16)),
+                    ),
+                    Container(
+                      height: 24,
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Nie masz jeszcze konta?',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                                lineHeight: 1.4,
+                              ),
+                        ),
+                        Text(
+                          'Dołącz do drużyny',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                    lineHeight: 1.4,
+                                  ),
+                        ),
+                      ].divide(SizedBox(width: 4)),
+                    ),
+                  ].divide(SizedBox(height: 24)),
+                ),
+              ),
+              Container(
+                height: 32,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
